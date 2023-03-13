@@ -76,3 +76,6 @@ end
 
 # deviseの導入
 gem 'devise'
+gem "importmap-rails", "~> 1.1"
+
+gem 'bootstrap', '~> 5.2.2'
