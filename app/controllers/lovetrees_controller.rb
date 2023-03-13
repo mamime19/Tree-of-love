@@ -1,0 +1,3 @@
+class LovetreesController < ApplicationController
+	
+end

@@ -1,0 +1,2 @@
+module LovetreesHelper
+end
