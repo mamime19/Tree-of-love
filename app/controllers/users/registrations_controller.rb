@@ -7,13 +7,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
    def new
      @user = User.new
-      @lovetree = @user.build_lovetree
+    @lovetree = @user.build_lovetree
    end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+   def create
+     super
+     resource.build_lovetree
+     resource.lovetree.growth=0;
+     resource.lovetree.user_id=current_user.id;
+     resource.save
+   end
 
   # GET /resource/edit
   # def edit
