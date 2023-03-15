@@ -15,7 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
      super
      resource.build_lovetree
      resource.lovetree.growth=0;
-     resource.lovetree.user_id=current_user.id;
+     resource.lovetree.user_id=resource.id
      resource.save
    end
 
