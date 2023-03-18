@@ -11,7 +11,9 @@ end
   resources :users do
     resource :lovetree
   end
-  get 'user/:id/lovetree' ,to: 'lovetree#show'
+  get 'users/:id/lovetree' ,to: 'lovetree#show'
   get '/story', to: 'pages#show'
+  get '/contact', to:'pages#contact'
+  get 'users/:id/setting', to:'users#setting'
   root "users#index"
 end

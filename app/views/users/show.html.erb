@@ -1,5 +1,6 @@
-<h1>ユーザーページ</h1>
-
 <%= @lovetree.growth %>
-<a href="/users/<%=@user.id%>/lovetree">tree</a>
-<%= render :partial => "layouts/menu" %>
+<%= render :partial => "layouts/menu", :locals => { idnum: @user.id }  %>
+
+<%= month_calendar do |date| %>
+  <%= date %>
+<% end %>

@@ -1,2 +1,26 @@
-<h1>a</h1>
-<%= @lovetree.growth %>
+<%= render :partial => "layouts/menu", :locals => { idnum: @lovetree.user_id }%>
+<%=
+@lovetree.growth=30
+%>
+<% if @lovetree.growth<=10 %>
+	<%= image_tag 'tree_seichou01.png' %>
+<% elsif @lovetree.growth<=20 %>
+	<%= image_tag 'tree_seichou02.png' %>
+<% elsif @lovetree.growth<=30 %>
+	<%= image_tag 'tree_seichou03.png' %>
+<% elsif @lovetree.growth<=40 %>
+	<%= image_tag 'tree_seichou04.png' %>
+<% elsif @lovetree.growth<=50 %>
+	<%= image_tag 'tree_seichou05.png' %>
+<% elsif @lovetree.growth<=70 %>
+	<%= image_tag 'tree_seichou06.png' %>
+<% elsif @lovetree.growth<=85 %>
+	<%= image_tag 'tree_seichou07.png' %>
+<% elsif @lovetree.growth<=100 %>
+	<%= image_tag 'tree_seichou08.png' %>
+<% elsif @lovetree.growth<=90 %>
+	<%= image_tag 'tree_seichou09.png' %>
+<% end %>
+<div class="progress" style="width:300px;">
+  <div class="progress-bar bg-success" role="progressbar" style="width: <%=@lovetree.growth%>%" aria-valuenow="<%=@lovetree.growth%>" aria-valuemin="0" aria-valuemax="100"></div>
+</div>

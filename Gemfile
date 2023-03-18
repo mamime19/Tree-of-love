@@ -79,3 +79,5 @@ gem 'devise'
 gem "importmap-rails", "~> 1.1"
 
 gem 'bootstrap', '~> 5.2.2'
+
+gem 'simple_calendar', '~> 2.0'

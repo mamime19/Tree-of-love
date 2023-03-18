@@ -7,4 +7,7 @@ class UsersController < ApplicationController
     @user=User.find(params[:id])
     @lovetree=@user.lovetree
   end
+  def setting
+    @user=User.find(params[:id])
+  end
 end
