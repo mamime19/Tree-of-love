@@ -1,11 +1,11 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view %>
+    <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view ,class:"btn btn-primary btn-sm"%>
     <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
-    <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view %>
+    <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view,class:"btn btn-primary btn-sm" %>
   </div>
 
-  <table class="table table-striped">
+  <table class="table">
     <thead>
       <tr>
         <% date_range.slice(0, 7).each do |day| %>
@@ -24,6 +24,15 @@
               <% else %>
                 <% passed_block.call day, sorted_events.fetch(day, []) %>
               <% end %>
+              <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="dropdown" aria-expanded="false">
+                +
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <li><a class="dropdown-item" href="#">感謝の言葉</a></li>
+                <li><a class="dropdown-item" href="#">愛情の言葉</a></li>
+                <li><a class="dropdown-item" href="#">プレゼント</a></li>
+                <li><a class="dropdown-item" href="#">デート</a></li>
+              </ul>
             <% end %>
           <% end %>
         </tr>
