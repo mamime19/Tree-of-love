@@ -1,1 +1,4 @@
-<h1>aaa</h1>
+<%= render :partial => "layouts/menu", :locals => { idnum: current_user.id, push: 2 }  %>
+<%= month_calendar do |date| %>
+  <%= date %>
+<% end %>

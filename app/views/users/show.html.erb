@@ -1,6 +1,1 @@
-<%= @lovetree.growth %>
-<%= render :partial => "layouts/menu", :locals => { idnum: @user.id }  %>
-
-<%= month_calendar do |date| %>
-  <%= date %>
-<% end %>
+<%= render :partial => "layouts/menu", :locals => { push: 1, idnum: @user.id }  %>

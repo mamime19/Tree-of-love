@@ -1,14 +1,26 @@
 <h1>ユーザーページ</h1>
 <p>大切な人にプレゼントをしたり、感謝の言葉を伝えて愛情の木を成長させましょう！</p>
-
+<%=push%>
 <ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="/users/<%=idnum%>/lovetree">Tree</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/lovetree">Caledar</a>
-  </li>
-  <li class="nav-item">
+  <% if push == 1 %>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="/users/<%=idnum%>/lovetree">Tree</a>
+    </li>
+  <% else %>
+    <a class="nav-link" href="/users/<%=idnum%>/lovetree">Tree</a>
+  <% end %>
+  <% if push==2 %>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="/users/<%=idnum%>/calendar">Caledar</a>
+    </li>
+  <% else %>
+    <a class="nav-link"  href="/users/<%=idnum%>/calendar">Caledar</a>
+  <% end %>
+  <% if push==3 %>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="/users/<%=idnum%>/setting">Setting</a>
+    </li>
+  <% else %>
     <a class="nav-link" href="/users/<%=idnum%>/setting">Setting</a>
-  </li>
+  <% end %>
 </ul>

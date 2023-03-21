@@ -16,7 +16,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
      resource.lovetree.growth=0;
      resource.lovetree.user_id=resource.id
      resource.save
-     params.require(:user).permit(:name,:email)
    end
 
   # GET /resource/edit
