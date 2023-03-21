@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
+    :confirmations => 'users/confirmations',
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions',
+    :passwords => 'users/passwords'
   }
 end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
