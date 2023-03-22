@@ -13,6 +13,7 @@ end
   # root "articles#index"
   resources :users do
     resource :lovetree
+    resources :calendars, only: [:show]
   end
   get 'users/:id',to:'lovetree#show'
   get 'users/:id/lovetree' ,to: 'lovetree#show'
@@ -20,5 +21,6 @@ end
   get '/contact', to:'pages#contact'
   get 'users/:id/calendar', to:'calendar#show'
   get 'users/:id/setting', to:'users#setting'
+  post 'users/:id/calendar/create',to:'calendar#create'
   root "users#index"
 end

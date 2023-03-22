@@ -1,4 +1,15 @@
 <%= render :partial => "layouts/menu", :locals => { idnum: current_user.id, push: 2 }  %>
+<%= form_for @calendar, url: '/users/:id/calendar/create' do |f| %>
+  <%= f.date_field :day,min: Time.zone.now ,class:"form-control"%>
+   <%= f.select :type,[['感謝の言葉', 1], ['愛情の言葉', 2], ['プレゼント', 3], ['デート', 4]],{},class:"form-select" %>
+  <%= f.submit 'コメントする' ,class:"btn btn-primary",data: {comfirm: "予定が追加されました"}%>
+<% end %>
 <%= month_calendar do |date| %>
-  <%= date %>
+  <%= date %><br>
+  <% @calendars.each do |event| %>
+      <% if event.day==date %>
+        <span class="badge bg-success"><%= @event_name[event.type-1] %></span>
+      <% end %>
+  <% end %>
+
 <% end %>

@@ -24,15 +24,6 @@
               <% else %>
                 <% passed_block.call day, sorted_events.fetch(day, []) %>
               <% end %>
-              <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="dropdown" aria-expanded="false">
-                +
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <li><a class="dropdown-item" href="#">感謝の言葉</a></li>
-                <li><a class="dropdown-item" href="#">愛情の言葉</a></li>
-                <li><a class="dropdown-item" href="#">プレゼント</a></li>
-                <li><a class="dropdown-item" href="#">デート</a></li>
-              </ul>
             <% end %>
           <% end %>
         </tr>
