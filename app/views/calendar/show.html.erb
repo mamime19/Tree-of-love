@@ -1,13 +1,24 @@
 <%= render :partial => "layouts/menu", :locals => { idnum: current_user.id, push: 2 }  %>
 <%= form_for @calendar, url: '/users/:id/calendar/create' do |f| %>
-  <%= f.date_field :day,min: Time.zone.now ,class:"form-control"%>
-   <%= f.select :type,[['感謝の言葉', 1], ['愛情の言葉', 2], ['プレゼント', 3], ['デート', 4]],{},class:"form-select" %>
-  <%= f.submit 'コメントする' ,class:"btn btn-primary"%>
+  <div class="item_inner3">
+    <p>以下のフォームから入力スペースから予定を追加しよう！</p>
+    <div class="container px-4">
+      <div class="row gx-5">
+        <div class="col">
+        <%= f.date_field :day,min: Time.zone.now ,class:"form-control"%>
+        </div>
+        <div class="col">
+          <%= f.select :type,[['感謝の言葉', 1], ['愛情の言葉', 2], ['プレゼント', 3], ['デート', 4]],{},class:"form-select" %>
+        </div>
+      </div>
+    </div>
+    <%= f.submit '追加' ,class:"btn btn-primary"%>
+  </div>
 <% end %>
 <%= month_calendar do |date| %>
   <%= date %><br>
   <% @calendars.each do |event| %>
-      <% if event.day==date %>
+      <% if event.day==date and event.day > Time.now.yesterday %>
         <span class="badge bg-success"><%= @event_name[event.type-1] %></span>
       <% end %>
   <% end %>
