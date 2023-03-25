@@ -1,18 +1,18 @@
-<% if user_signed_in? %>
-<i>Rather than a piece of bread, a lot of people I love, hungry for a small smile.</i><br>
-<i>~Mother Teresa~</i>
-
-<ol>
-  <li>愛情表現の予定を決めよう！</li>
+<div class="item_inner_home">
+  <div class="jumbotron">
+    <h1 class="display-4">Love Treeへようこそ</h1>
+    <p class="lead">Love Treeは愛情や感謝の表現を応援するサービスです</p>
+  </div>
+</div>
+ <ol>
+  <li><p class="lead">愛情表現の予定を決めよう！</p></li>
   <li>実際に行動！</li>
   <li>木が成長するよ！</li>
-</ol>
+  </ol>
+<% if user_signed_in? %>
 <h1>ユーザー一覧</h1>
 <% @users.each do |user| %>
   <a href="/users/<%= user.id %>"><%= user.email %></a>
   <hr>
 <% end %>
-<% else %>
-  <%= link_to "ユーザー登録", new_user_registration_path %>
-  <%= link_to "ログイン", new_user_session_path %>
-<% end %>
+<%end %>
