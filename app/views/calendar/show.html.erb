@@ -20,7 +20,6 @@
   <% @calendars.each do |event| %>
       <% if event.day==date and event.day > Time.now.yesterday %>
         <span class="badge bg-success"><%= @event_name[event.type-1] %></span>
-      <% end %>
-  <% end %>
-
+    <% end %>
+<% end %>
 <% end %>

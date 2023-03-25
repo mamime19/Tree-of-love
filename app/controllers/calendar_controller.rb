@@ -3,7 +3,7 @@ class CalendarController < ApplicationController
 		@number=Calendar.count
 	end
 	def show
-		@calendars=Calendar.all
+		@calendars=Calendar.where(user:current_user)
 		@calendar=Calendar.new
 		@event_name=["感謝の言葉","愛情の言葉","プレゼント","デート"]
 	end
@@ -12,6 +12,10 @@ class CalendarController < ApplicationController
 		@calendar.user_id=current_user.id
 		@calendar.type=params[:calendar][:type]
 		@calendar.day=params[:calendar][:day]
+		@lovetree=Lovetree.find(current_user.id)
+		number=@lovetree.growth
+		number+=5
+		@lovetree.update(growth:number,user:@lovetree.user)
 		if @calendar.save
       		redirect_back(fallback_location: root_path)
     	else
