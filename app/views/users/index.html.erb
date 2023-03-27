@@ -3,13 +3,16 @@
     <h1 class="display-4">Love Treeへようこそ</h1>
     <p class="lead">Love Treeは愛情や感謝の表現を応援するサービスです</p>
     <% if not user_signed_in? %>
-  <div class="item_inner_home2">
-    <a class="btn btn-primary" href="/users/sign_in" role="button">さっそく始めてみる</a>
+      <div class="item_inner_home2">
+        <a class="btn btn-primary" href="/users/sign_in" role="button">さっそく始めてみる</a>
+      </div>
+    <% else %>
+      <div class="item_inner_home2">
+        <a class="btn btn-primary" href="users/<%=current_user.id%>" role="button">さっそく始めてみる</a>
+      </div>
+    <% end %>
   </div>
-<% else %>
-  <div class="item_inner_home2">
-    <a class="btn btn-primary" href="users/<%=current_user.id%>" role="button">さっそく始めてみる</a>
-  </div>
-  <% end %>
-  </div>
+</div>
+<div class="item_inner_home2">
+  <%= image_tag 'home.png' ,class:"shrink"%>
 </div>
