@@ -13,7 +13,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
    def create
      super
      resource.build_lovetree
-     resource.lovetree.growth=0;
+     resource.lovetree.growth=0
+     resource.lovetree.mode=0
      resource.lovetree.user_id=resource.id
      resource.save
    end

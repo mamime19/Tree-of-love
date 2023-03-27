@@ -1,7 +1,9 @@
 <%= render :partial => "layouts/menu", :locals => { idnum: @lovetree.user_id ,push: 1}%>
 <div class="item_inner">
-	<% if @lovetree.growth<=10 %>
-		<%= image_tag 'tree_seichou01.png'%>
+	<% if @lovetree.growth==-1%>
+		<%= image_tag 'tree_seichou10.png' ,class:"position"%>
+	<% elsif @lovetree.growth<=10 %>
+		<%= image_tag 'tree_seichou01.png' ,class:"position"%>
 	<% elsif @lovetree.growth<=20 %>
 		<%= image_tag 'tree_seichou02.png' ,class:"position"%>
 	<% elsif @lovetree.growth<=30 %>

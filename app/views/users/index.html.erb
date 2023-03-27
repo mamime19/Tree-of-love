@@ -2,17 +2,14 @@
   <div class="jumbotron">
     <h1 class="display-4">Love Treeへようこそ</h1>
     <p class="lead">Love Treeは愛情や感謝の表現を応援するサービスです</p>
+    <% if not user_signed_in? %>
+  <div class="item_inner_home2">
+    <a class="btn btn-primary" href="/users/sign_in" role="button">さっそく始めてみる</a>
+  </div>
+<% else %>
+  <div class="item_inner_home2">
+    <a class="btn btn-primary" href="users/<%=current_user.id%>" role="button">さっそく始めてみる</a>
+  </div>
+  <% end %>
   </div>
 </div>
- <ol>
-  <li><p class="lead">愛情表現の予定を決めよう！</p></li>
-  <li>実際に行動！</li>
-  <li>木が成長するよ！</li>
-  </ol>
-<% if user_signed_in? %>
-<h1>ユーザー一覧</h1>
-<% @users.each do |user| %>
-  <a href="/users/<%= user.id %>"><%= user.email %></a>
-  <hr>
-<% end %>
-<%end %>

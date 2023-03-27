@@ -13,9 +13,7 @@ class CalendarController < ApplicationController
 		@calendar.type=params[:calendar][:type]
 		@calendar.day=params[:calendar][:day]
 		@lovetree=Lovetree.find(current_user.id)
-		number=@lovetree.growth
-		number+=5
-		@lovetree.update(growth:number,user:@lovetree.user)
+		@lovetree.update(growth:@lovetree.growth,user:@lovetree.user,mode:1)
 		if @calendar.save
       		redirect_back(fallback_location: root_path)
     	else
